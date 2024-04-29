@@ -1,6 +1,6 @@
-ans = 0
+ans = 1
 for _ in range(5):
     if ans: continue
-    if int(input()) % 3 == 0:
-        ans = 1
+    if not int(input()) % 3 == 0:
+        ans = 0
 print(ans)
