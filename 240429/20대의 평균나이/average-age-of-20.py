@@ -1,12 +1,8 @@
 ages = 0
 num = 0
 while True:
-    try:
-        age = int(input())
-    except EOFError:
-        break
-        
-    if ( age >= 30 ): break
+    age = int(input())        
+    if not( (20 <= age) and (age< 30) ): break
     ages += age
     num += 1
 
