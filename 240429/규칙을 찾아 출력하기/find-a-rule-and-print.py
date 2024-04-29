@@ -3,4 +3,4 @@ n = int(input())
 print("* " * n)
 
 for i in range(1,n):
-    print(("* "* i).ljust(n-1, " ") + "*")
+    print(("* "* i).ljust(n*2-2, " ") + "*")
