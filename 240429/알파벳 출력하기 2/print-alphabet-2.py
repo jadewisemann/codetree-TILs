@@ -2,6 +2,7 @@
 counter = 65
 N = int(input())
 for i in range(N):
+    tmp = []
     for _ in range(N - i):
         tmp.append(chr(counter))
         counter += 1
