@@ -1,5 +1,1 @@
-rst = []
-for _ in range(2):
-    rst += list(input().split(" "))
-
-print("".join(rst))
+print("".join(["".join(input().split(" ")) for _ in range(2)]))
