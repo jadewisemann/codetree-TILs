@@ -13,9 +13,9 @@ for idx in range(size):
     for jdx in range(size):
         
         rst_counter += 1 if sum(
-            0 <= idx + dx < size 
-            and  0 <= jdx + dy < size
-            and  grp[idx + dx][jdx + dy] == 1
+            0 <= idx + dx < size and 
+            0 <= jdx + dy < size and 
+            grp[idx + dx][jdx + dy] == 1
             for dx, dy in moves
         ) >= 3 else 0
 
