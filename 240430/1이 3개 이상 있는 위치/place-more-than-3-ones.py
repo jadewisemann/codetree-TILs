@@ -9,6 +9,9 @@ moves = [
     ( 0, -1)
 ] 
 
+dxs = [ 1, -1,  0,  0 ] 
+dys = [ 0,  0,  1, -1 ]
+ 
 for idx in range(size):
     for jdx in range(size):
         
@@ -16,7 +19,7 @@ for idx in range(size):
             0 <= idx + dx < size and 
             0 <= jdx + dy < size and 
             grp[idx + dx][jdx + dy] == 1
-            for dx, dy in moves
+            for dx, dy in zip(dxs, dys)
         ) >= 3 else 0
 
 print(rst_counter)
