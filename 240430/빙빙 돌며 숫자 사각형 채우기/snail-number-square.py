@@ -1,8 +1,3 @@
-"""
-n, n-1, n-1, n-2, n-2 n-3 n-3/ n-4,,...
-n / n = n-1 * 2 ... /  
-"""
-
 ORIENTS = {
     0 : (  0,  1 ), 
     1 : (  1,  0 ), 
@@ -20,8 +15,8 @@ while (curr_num <= n*m):
     nx, ny = xx + dx, yy + dy
 
     if not (
-        0<= nx < m and
-        0<= ny < n and
+        0<= ny < m and
+        0<= nx < n and
         grp[nx][ny] == 0 
     ) :
         direct = (direct + 1) % 4
