@@ -5,7 +5,7 @@ curr = 0
 
 for idx in range(size-1, -1, -1):  # 3,2,1,0
     for jdx in range(size):  # 0,1,2,3
-        if idx%2 == 1:
+        if idx%2 == (1 if size%2 == 0 else 0):
             jdx = size -1 - jdx
         curr += 1
         grp[jdx][idx] = curr
