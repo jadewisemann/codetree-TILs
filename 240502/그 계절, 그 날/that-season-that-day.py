@@ -6,15 +6,21 @@ def sol(y,m,d):
             year % 400 == 0
         ) else False
     
-    # 1: 31 2: 28, 29 3: 31
+    # 1: 31 2: 28, 29 3: 31 ... 7: 31, 8: 31 9: 30 .//
 
     if not (
-        m % 2 == 0 and d <= 30 or ( 
-        m == 2 and ( 
-            d <= 29 and (
-            d == 29 and check_leap_years(y))
-        ))
-    ):
+        (m <= 7) and (
+            m % 2 == 0 and d <= 30 or ( 
+            m == 2 and ( 
+                d <= 29 and (
+                d == 29 and check_leap_years(y))
+            )
+        ) or
+        (m > 7) and (
+            m % 2 == 0 and d<= 30 or
+            m % 2 == 1 and d<= 31
+        )
+    )):
             return -1
 
     
