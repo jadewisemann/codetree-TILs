@@ -7,7 +7,7 @@ def sol(n):
     }
 
     if n <=2 : 
-        return realtions[n]
+        return relations[n]
     
     return sol(n-1) + sol(n - 2)
 
