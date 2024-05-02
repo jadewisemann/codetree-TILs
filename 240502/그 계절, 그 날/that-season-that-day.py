@@ -5,16 +5,25 @@ def sol(y,m,d):
             (year % 4 == 0 and not year % 100 == 0) or
             year % 400 == 0
         ) else False
+    
+    # 1: 31 2: 28, 29 3: 31
 
-    if d == 29 and not check_leap_years(y):
+    if not (
+        m % 2 == 0 and d <= 30 or ( 
+        m == 2 and ( 
+            d <= 29 and (
+            d == 29 and check_leap_years(y))
+        ))
+    ):
             return -1
+
+    
     
     return (
         'Spring' if 3<= m <= 5  else
         'Summer' if 6<= m <= 8  else
         'Fall'   if 9<= m <= 11 else
-        'Winter' if m <= 2 or m == 12 else
-        -1
+        'Winter' 
     )
 
 
