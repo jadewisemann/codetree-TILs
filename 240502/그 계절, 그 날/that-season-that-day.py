@@ -9,16 +9,19 @@ def sol(y,m,d):
     if (
         (m == 2 and (
             (check_leap_years(y) and d > 29) or 
-            (not check_leap_years(y) and d > 28))) or 
-        ( m <= 7 and (
+            (not check_leap_years(y) and d > 28)
+        )) or 
+
+        (m <= 7 and (
             (m % 2 == 0 and d > 30) or 
-            (m % 2 == 1 and d > 31))  ) or
+            (m % 2 == 1 and d > 31)
+        )) or
+
         (m > 7 and (
             (m % 2 == 0 and d > 31) or 
             (m % 2 == 1 and d > 30)
         ))
-    ):
-        return -1
+    ): return -1
 
     
     
