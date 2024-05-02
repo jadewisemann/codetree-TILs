@@ -32,7 +32,4 @@ def sol(y,m,d):
         'Winter' 
     )
 
-
-# Y, M, D = map(int, input().split())
-
 print(sol(*list(map(int, input().split()))))
