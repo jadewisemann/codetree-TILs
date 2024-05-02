@@ -1,0 +1,1 @@
+print(chr( (ord(str(input())) - ord('a')  - 1 + 26 ) % 26 + ord('a')))
