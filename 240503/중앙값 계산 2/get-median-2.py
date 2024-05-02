@@ -4,6 +4,6 @@ rst = []
 
 for num in nums:
     rst.append(num)
+    rst.sort()
     if num%2 == 1:
-        rst.sort()
         print(rst[len(rst)//2], end=" ")
