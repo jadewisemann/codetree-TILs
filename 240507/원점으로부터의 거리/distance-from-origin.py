@@ -4,7 +4,7 @@ class Point:
         self.x_coor = x_coor
         self.y_coor = y_coor
         self.idx = idx + 1
-        self.distance = int(x_coor)**2 + int(y_coor)**2 
+        self.distance = abs(int(x_coor)) + abs(int(y_coor)) 
 
 
 
