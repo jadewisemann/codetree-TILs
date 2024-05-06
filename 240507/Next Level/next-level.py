@@ -3,8 +3,8 @@ class User:
         self.user_id = user_id
         self.level   = level
     
-    def ref(self):
-        print(
+    def __repr__(self):
+        return(
             f"user {self.user_id} lv {self.level}"
         )
 
@@ -12,5 +12,5 @@ class User:
 user1 = User("codetree", "10")
 user2 = User(*list(map(str, input().split())))
 
-user1.ref()
-user2.ref()
+print(user1)
+print(user2)
