@@ -1,8 +1,8 @@
 class Student:
 
     def __init__(self, height, weight, idx):
-        self.height = int(height)
-        self.weight = int(weight)
+        self.height = height
+        self.weight = weight
         self.index = idx + 1
         
     
@@ -10,6 +10,6 @@ class Student:
         return f"{self.height} {self.weight} {self.index}"
     
 for student in sorted(
-    [Student(*input().split(), idx) for idx in range(int(input()))],
+    [Student(*map(int, input().split()), idx) for idx in range(int(input()))],
     key= lambda x: (-x.height, -x.weight, x.index),
 ): print(student)
