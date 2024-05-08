@@ -4,7 +4,9 @@ DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
 m1, d1, m2, d2 = map(int, input().split())
 
-date_gap = sum(MONTHS[m1:m2]) - d1 + d2
-index_gap = date_gap % 7 
+total_date = lambda m,d : sum(MONTHS[:m]) + d
 
+date_gap = total_date(m2,d2) - total_date(m1,d1)
+
+index_gap = date_gap % 7 
 print(DAYS[index_gap])
