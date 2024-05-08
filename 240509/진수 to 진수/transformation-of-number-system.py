@@ -7,8 +7,7 @@ for char in str(input()):
 
 # n[10] => n[b]
 result = ""
-while num >= b:
+while num > 0:
     num, remainder = divmod(num, b)
     result += str(remainder)
-result += str(num)
 print(int(result[::-1]))
