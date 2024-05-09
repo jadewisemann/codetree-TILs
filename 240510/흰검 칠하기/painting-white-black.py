@@ -1,23 +1,30 @@
-vis = {}
-cur= 0
-for _  in range(int(input())):
+OFFSET = 1000 * 100
 
-    val, direct = input().split()
-    color = "B" if direct == "R" else "W"
-    
-    for _ in range(int(val)):
-        if cur in vis:
-            if len(vis[cur]) >= 3:
-                vis[cur] += "G"
-            else:
-                vis[cur] += color
-        else:
-            vis[cur] = color
-    
-        cur += 1 if direct == "R" else -1
-    
-    cur += -1 if direct == "R" else 1
+cur = 0 
+arr = [""] * (OFFSET * 2 + 1)
 
-vals = [var[-1] for var in vis.values()]
+for _ in range(int(input())):
 
-print(vals.count("W"), vals.count("B"), vals.count("G"))
+	val, dirc  = input().split()
+	val = int(val)
+
+	if dirc == "R":
+		for idx in range(val):
+			arr[cur + idx + OFFSET] += "B"
+		cur += val - 1
+
+	elif dirc == "L":
+		for idx in range(val):
+			arr[cur - idx + OFFSET] += "W"
+		cur -= val - 1
+
+bb, ww, gg = 0 , 0 , 0 
+for el in filter(lambda el: el !="" ,arr):
+	if len(el) >= 4:
+		gg += 1
+	else:
+		if el.endswith("B"):
+			bb += 1
+		else: 
+			ww += 1
+print(ww, bb, gg )
