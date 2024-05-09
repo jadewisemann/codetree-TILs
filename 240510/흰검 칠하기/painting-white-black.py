@@ -10,13 +10,18 @@ for _ in range(int(input())):
 
 	if dirc == "R":
 		for idx in range(val):
-			arr[cur + idx + OFFSET] += "B"
+			c_idx = cur + idx + OFFSET
+			if not arr[c_idx].endswith("B"):
+				arr[c_idx] += "B"
 		cur += val - 1
 
 	elif dirc == "L":
 		for idx in range(val):
-			arr[cur - idx + OFFSET] += "W"
+			c_idx = cur - idx + OFFSET
+			if not arr[c_idx].endswith("W"):
+				arr[c_idx] += "W"
 		cur -= val - 1
+
 
 bb, ww, gg = 0 , 0 , 0 
 for el in filter(lambda el: el !="" ,arr):
