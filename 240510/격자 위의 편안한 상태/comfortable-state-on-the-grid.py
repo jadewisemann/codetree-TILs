@@ -21,4 +21,4 @@ for _ in range(m):
         ny = c + dy -1
         if not (0<= nx < n and 0<= ny < n): continue
         if grp[nx][ny]: cnt += 1
-    print(1 if cnt >=3 else 0)
+    print(1 if cnt == 3 else 0)
