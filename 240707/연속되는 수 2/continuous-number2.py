@@ -7,8 +7,8 @@ for _ in range(int(input())):
         local += 1
     else:
         result = max(local, result)
-        local = 0
-        
+        local = 1
+
     last = curr
 
-print(result+1)
+print(result)
