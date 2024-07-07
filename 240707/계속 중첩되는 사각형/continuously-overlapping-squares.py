@@ -2,11 +2,6 @@ BLANK = 0
 BLUE = 1
 RED = 2
 
-curr_color = {
-    0: BLUE,
-    1: RED
-}
-
 offset = 100
 factor = offset * 2  + 1
 
@@ -26,8 +21,8 @@ for idx in range(int(input())):
     else: # red
         for dx in range(sx, ax):
             for dy in range(sy, ay):
-                grp[dx][dy] = RED
                 if grp[dx][dy] == BLUE:
                     result -= 1        
+                grp[dx][dy] = RED
 
 print(result)
