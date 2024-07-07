@@ -20,4 +20,5 @@ for dx in range(fxa, fxb):
             maxx = max(maxx, dx)
             maxy = max(maxy, dy)
 
-print((maxx - minx + 1) * (maxy - miny + 1))
+
+print(0 if (minx == factor or miny == factor or maxx == 0 or maxy == 0) else (maxx - minx + 1) * (maxy - miny + 1) )
