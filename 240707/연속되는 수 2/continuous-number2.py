@@ -1,6 +1,6 @@
 result = 0
 last = 0
-local= 0
+local= 1
 for _ in range(int(input())):
     curr = int(input())
     if curr == last :
