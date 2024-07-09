@@ -11,15 +11,15 @@ contact_info.sort()
 
 for _, a, b in contact_info:
     
-    if dureation[a] and not status[b]:
+    if dureation[a] > 0 and status[b] == 0:
         status[b] = 1
         dureation[b] = K
         dureation[a] -= 1
             
 
-    if dureation[b] and not status[a]:
-            status[a] = 1
-            dureation[a] = K
-            dureation[b] -= 1
+    if dureation[b] > 0 and status[a] == 0:
+        status[a] = 1
+        dureation[a] = K
+        dureation[b] -= 1
 
 print("".join(map(str, status[1:])))
