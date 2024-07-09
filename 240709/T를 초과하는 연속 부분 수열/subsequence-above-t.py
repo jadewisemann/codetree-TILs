@@ -1,17 +1,20 @@
-N, limit = map(int, input().split())
+def max_subsequence_length(n, t, sequence):
+    max_length = 0
+    current_length = 0
+    
+    for num in sequence:
+        if num > t:
+            current_length += 1
+            if current_length > max_length:
+                max_length = current_length
+        else:
+            current_length = 0
+    
+    return max_length
+
+# 입력 받기
+n, t = map(int, input().split())
 sequence = list(map(int, input().split()))
 
-answer = 0
-counter = 0
-
-for i in range(N):
-    if sequence[i] > limit:
-        if i == 0 or sequence[i] > sequence[i - 1]:
-            counter += 1
-        else:
-            counter = 1
-        answer = max(answer, counter)
-    else:
-        counter = 0
-
-print(answer)
+# 결과 출력
+print(max_subsequence_length(n, t, sequence))
