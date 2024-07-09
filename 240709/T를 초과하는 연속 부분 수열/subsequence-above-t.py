@@ -10,7 +10,7 @@ for el in sequence:
     
     counter += 1
     
-    if el < limit or el < last_el:
+    if el <= limit or el <= last_el:
         answer = max(answer, counter-1)
         counter = 0
     
