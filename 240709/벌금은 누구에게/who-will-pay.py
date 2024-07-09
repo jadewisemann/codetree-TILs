@@ -13,4 +13,4 @@ for _ in range(M):
 
     penalties[num - 1] -= 1
 
-print(num)
+print(rst)
