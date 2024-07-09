@@ -1,6 +1,5 @@
 N, K, P, T = tuple(map(int, input().split()))
 
-devs = [0] + [idx + 1 for idx in range(N)]
 status = [0] + [0 for _ in range(N)]
 dureation = [0] + [0 for _ in range(N)]
 
@@ -12,17 +11,15 @@ contact_info.sort()
 
 for _, a, b in contact_info:
     
-    if dureation[a] > 0:    
-        if status[b] == 0:
-            status[b] = 1
-            dureation[b] = K
+    if dureation[a] and not status[b]:
+        status[b] = 1
+        dureation[b] = K
         dureation[a] -= 1
             
 
-    if dureation[b] >  0:
-        if status[a] == 0:
+    if dureation[b] and not status[a]:
             status[a] = 1
             dureation[a] = K
-        dureation[b] -= 1
+            dureation[b] -= 1
 
 print("".join(map(str, status[1:])))
