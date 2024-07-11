@@ -5,7 +5,8 @@ grp = [[0]*m for _ in range(n)]
 
 col_counter, low_counter = n-1, m
 xx, yy = 0, -1
-char = ord("A")
+ord_a = ord("A") 
+char = ord_a
 move_idx = 0
 
 
@@ -20,7 +21,7 @@ while True:
         yy += dy
 
         grp[xx][yy] = chr(char)
-        char += 1
+        char = ord_a + (char - ord_a + 1)  % 26 
 
     low_counter -=  1
 
@@ -35,7 +36,8 @@ while True:
         yy += dy
         grp[xx][yy] = chr(char)
 
-        char += 1
+        char = ord_a + (char - ord_a + 1)  % 26 
+        
 
     col_counter -= 1
 
