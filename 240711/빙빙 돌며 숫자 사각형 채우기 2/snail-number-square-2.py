@@ -9,7 +9,7 @@ number = 1
 move_idx = 0
 
 
-while col_counter >= 0 and low_counter >= 0:
+while col_counter >= 0 or low_counter >= 0:
     
     for _ in range(col_counter):
         dx, dy = MOVE[move_idx]
