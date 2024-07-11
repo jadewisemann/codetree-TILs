@@ -9,8 +9,10 @@ number = 1
 move_idx = 0
 
 
-while col_counter >= 0 or low_counter >= 0:
+while True:
     
+    if col_counter == 0: break
+
     for _ in range(col_counter):
         dx, dy = MOVE[move_idx]
         xx += dx
@@ -23,6 +25,8 @@ while col_counter >= 0 or low_counter >= 0:
 
     move_idx = (move_idx + 1)  % 4
     
+    if low_counter == 0: break
+
     for _ in range(low_counter):
 
         dx, dy = MOVE[move_idx]
