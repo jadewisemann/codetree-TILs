@@ -18,10 +18,11 @@ rst += grp[xx][yy]
 for current_command in command:
 
     if current_command == 'L':
-        orient_idx -= 1
+        orient_idx = (4 + (orient_idx-1))  % 4
 
     if current_command == 'R':
-        orient_idx += 1
+        orient_idx = (orient_idx + 1)  % 4
+
 
     if current_command == 'F':
         
